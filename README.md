@@ -1,6 +1,6 @@
 # librarynfc
 
-A new Flutter project. hi!!!
+A new Flutter project
 
 ## Getting Started
 
