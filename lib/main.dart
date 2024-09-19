@@ -16,13 +16,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Library NFC',
       theme: ThemeData(
-        primaryColor: Color(0xFF404040), // Dark grey
-        scaffoldBackgroundColor: Color(0xFF656565), // Slightly lighter dark grey
+        primaryColor: const Color(0xFF404040), // Dark grey
+        scaffoldBackgroundColor: const Color(0xFF656565), // Slightly lighter dark grey
         textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.grey[300]),
-          bodyText2: TextStyle(color: Colors.grey[300]),
+          // Updated the text theme properties
+          bodyMedium: const TextStyle(color: Colors.grey), // For Material 3
+          bodyLarge: const TextStyle(color: Colors.grey),  // For Material 3
+          bodyText2: const TextStyle(color: Colors.grey),  // For Material 2 (if needed)
         ),
-        iconTheme: IconThemeData(color: Colors.grey[300]),
+        iconTheme: const IconThemeData(color: Colors.grey),
       ),
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
