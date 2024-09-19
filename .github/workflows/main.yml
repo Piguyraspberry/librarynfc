@@ -1,0 +1,44 @@
+name: Flutter Build
+
+on:
+  push:
+    branches:
+      - main  # Change this to your target branch if needed
+
+jobs:
+  build:
+    runs-on: macos-latest  # Required for iOS builds
+
+    strategy:
+      matrix:
+        flutter-version: [stable]  # You can specify the Flutter version you want to use
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ matrix.flutter-version }}
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Build iOS Simulator
+        run: flutter build ios --debug --no-codesign
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Upload iOS Simulator Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-ios-simulator
+          path: build/ios/iphoneos/*.app  # This path may vary, adjust as necessary
