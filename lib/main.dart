@@ -19,10 +19,9 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFF404040), // Dark grey
         scaffoldBackgroundColor: const Color(0xFF656565), // Slightly lighter dark grey
         textTheme: TextTheme(
-          // Updated the text theme properties
-          bodyMedium: const TextStyle(color: Colors.grey), // For Material 3
-          bodyLarge: const TextStyle(color: Colors.grey),  // For Material 3
-          bodyText2: const TextStyle(color: Colors.grey),  // For Material 2 (if needed)
+          bodyLarge: const TextStyle(color: Colors.grey),  // For larger body text
+          bodyMedium: const TextStyle(color: Colors.grey), // For medium body text
+          bodySmall: const TextStyle(color: Colors.grey),   // For smaller body text
         ),
         iconTheme: const IconThemeData(color: Colors.grey),
       ),
