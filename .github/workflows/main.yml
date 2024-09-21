@@ -61,7 +61,7 @@ jobs:
 
       #8 Build IPA (iOS Build) without code signing
       - name: Build IPA
-        run: flutter build ipa -simulator
+        run: flutter build ipa --simulator
 
       #9 Upload Artifacts
       - name: Upload Artifacts
